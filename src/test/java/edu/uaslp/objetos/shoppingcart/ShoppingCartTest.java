@@ -6,6 +6,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import java.math.BigDecimal;
 import java.util.List;
 
+import edu.uaslp.objetos.exception.EmptyShoppingCartException;
+import edu.uaslp.objetos.exception.InvalidDataException;
+import edu.uaslp.objetos.exception.ItemNotFoundException;
 import org.junit.jupiter.api.Test;
 
 public class ShoppingCartTest {
@@ -20,7 +23,7 @@ public class ShoppingCartTest {
 
         // Then:
         assertThat(isEmpty).isTrue();
-    }
+}
 
     @Test
     public void givenANewShoppingCart_whenGetTotalCost_thenExceptionIsThrown() {
@@ -43,9 +46,9 @@ public class ShoppingCartTest {
         Item item = new Item();
 
         item.setCode(itemCode);
-        item.setProviderCode(providerCode);
+        item.setProviderCode(Integer.parseInt(providerCode));
         item.setQuantity(1);
-        item.setUnitCost(new BigDecimal("10.34"));
+        item.setUnitCost(String.valueOf(new BigDecimal("10.34")));
 
         // When:
         shoppingCart.addItem(item);
