@@ -4,15 +4,26 @@ import java.math.BigDecimal;
 
 public class Item {
     private String code;
-    private String unitCost;
+    private BigDecimal unitCost;
     private int quantity;
-    private int providerCode;
+    private String providerCode;
 
-    public Item(String code, String unitCost, int quantity, int providerCode) {
+    public Item(String code, BigDecimal unitCost, int quantity, String providerCode) {
         this.code = code;
         this.unitCost = unitCost;
         this.quantity = quantity;
         this.providerCode = providerCode;
+    }
+
+    public Item(String itemCode, String providerCode, BigDecimal unitCost,int quantity){
+        this.code = itemCode;
+        this.providerCode = providerCode;
+        this.unitCost = unitCost;
+        this.quantity = quantity;
+    }
+
+    public Item() {
+
     }
 
 
@@ -24,11 +35,11 @@ public class Item {
         this.code = code;
     }
 
-    public String getUnitCost() {
+    public BigDecimal getUnitCost() {
         return unitCost;
     }
 
-    public void setUnitCost(String unitCost) {
+    public void setUnitCost(BigDecimal unitCost) {
         this.unitCost = unitCost;
     }
 
@@ -40,11 +51,11 @@ public class Item {
         this.quantity = quantity;
     }
 
-    public int getProviderCode() {
+    public String getProviderCode() {
         return providerCode;
     }
 
-    public void setProviderCode(int providerCode) {
+    public void setProviderCode() {
         this.providerCode = providerCode;
     }
 }

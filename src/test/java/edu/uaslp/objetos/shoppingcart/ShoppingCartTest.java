@@ -23,7 +23,7 @@ public class ShoppingCartTest {
 
         // Then:
         assertThat(isEmpty).isTrue();
-}
+    }
 
     @Test
     public void givenANewShoppingCart_whenGetTotalCost_thenExceptionIsThrown() {
@@ -46,9 +46,9 @@ public class ShoppingCartTest {
         Item item = new Item();
 
         item.setCode(itemCode);
-        item.setProviderCode(Integer.parseInt(providerCode));
+        item.setProviderCode();
         item.setQuantity(1);
-        item.setUnitCost(String.valueOf(new BigDecimal("10.34")));
+        item.setUnitCost(new BigDecimal("10.34"));
 
         // When:
         shoppingCart.addItem(item);
