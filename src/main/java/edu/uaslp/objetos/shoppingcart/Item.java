@@ -8,12 +8,6 @@ public class Item {
     private int quantity;
     private String providerCode;
 
-    public Item(String code, BigDecimal unitCost, int quantity, String providerCode) {
-        this.code = code;
-        this.unitCost = unitCost;
-        this.quantity = quantity;
-        this.providerCode = providerCode;
-    }
 
     public Item(String itemCode, String providerCode, BigDecimal unitCost,int quantity){
         this.code = itemCode;
@@ -51,11 +45,11 @@ public class Item {
         this.quantity = quantity;
     }
 
-    public String getProviderCode() {
-        return providerCode;
-    }
-
-    public void setProviderCode() {
+   public void setProviderCode(){
         this.providerCode = providerCode;
-    }
+   }
+
+   public String getProviderCode(){
+        return providerCode;
+   }
 }

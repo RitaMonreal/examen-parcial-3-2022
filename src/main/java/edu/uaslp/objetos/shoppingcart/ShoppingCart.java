@@ -10,9 +10,9 @@ import java.util.List;
 public class ShoppingCart {
     private List<Item> shoppingCart = new ArrayList<>();
 
-    public void add(Item item){
+    /*public void add(Item item){
         shoppingCart.add(item);
-    }
+    }*/
 
     public BigDecimal getTotalCost() {
         if(shoppingCart.isEmpty()){
@@ -38,7 +38,7 @@ public class ShoppingCart {
             throw new InvalidDataException("Null or empty string not allowed for item code");
         }
 
-        if(item.setProviderCode().isEmpty()){
+        if(item.getProviderCode().isEmpty()){
             throw new InvalidDataException("Null or empty string not allowed for provider code");
         }
 
